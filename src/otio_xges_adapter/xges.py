@@ -954,7 +954,9 @@ class XGES:
 
         url_params = parse_qs(ref_url.query)
         if "framerate" in url_params:
-            rate = params["rate"] = float(Fraction(url_params["framerate"][-1]))
+            rate = params["rate"] = float(
+                Fraction(url_params["framerate"][-1])
+            )
             if "start-index" in url_params and "stop-index" in url_params:
                 start = int(url_params["start-index"][-1])
                 stop = int(url_params["stop-index"][-1])
